@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Patient;
 
 /**
- * The Body class represents the body parts model.
+ * Das Body-Modell repräsentiert die verschiedenen Körperteile eines Patienten und speichert deren Status.
  */
 class Body extends Model
 {
@@ -17,7 +17,8 @@ class Body extends Model
 
     // Define the fields that are fillable
     protected $fillable = [
-        'hals_vorne',
+                // Alle Körperteil-Felder, die bearbeitet werden können
+
         'brust_links',
         'brust_rechts',
         'leiste_links_vorne',
@@ -84,6 +85,11 @@ class Body extends Model
      *
      * @param  array  $attributes
      * @return void
+     */
+
+     /**
+     * Konstruktor der Body-Klasse, um Standardwerte für Körperteil-Status zu setzen.
+     * Alle Körperteile sind standardmäßig auf 0 gesetzt, was in der Regel "nicht geklickt" oder "inaktiv" bedeutet.
      */
     public function __construct(array $attributes = [])
     {
